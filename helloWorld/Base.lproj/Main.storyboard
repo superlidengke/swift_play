@@ -16,62 +16,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAZ-uQ-14X">
-                                <rect key="frame" x="159" y="478" width="97" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wzX-L8-LY0">
+                                <rect key="frame" x="9" y="138" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Play"/>
+                                <state key="normal" title="Download"/>
                                 <connections>
-                                    <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7x2-yl-8k7"/>
+                                    <segue destination="Mfh-R7-cjA" kind="show" id="HNg-D8-O0w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpd-Cw-U6k">
-                                <rect key="frame" x="19" y="117" width="78" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <rect key="contentStretch" x="0.14999999999999999" y="0.0" width="1" height="1"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="Setting"/>
-                                <connections>
-                                    <segue destination="Ce9-CE-gEs" kind="show" id="PXD-o9-Z24"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSJ-5o-HH4">
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oAZ-uQ-14X">
+                                        <rect key="frame" x="149" y="339" width="97" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="play:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7x2-yl-8k7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SSJ-5o-HH4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="EfC-My-zJm"/>
+                            <constraint firstItem="SSJ-5o-HH4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Muc-Ym-Jda"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SSJ-5o-HH4" secondAttribute="trailing" id="i76-vV-vl9"/>
+                            <constraint firstItem="SSJ-5o-HH4" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="34" id="mhI-dN-ejU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="TzE-JG-Q5M"/>
+                    <navigationItem key="navigationItem" id="TzE-JG-Q5M">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="jev-6S-5he">
+                            <connections>
+                                <action selector="menuTapped:" destination="BYZ-38-t0r" id="ZzH-ZQ-Np6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="leading" destination="Muc-Ym-Jda" id="Eg2-lK-76J"/>
                         <outlet property="playAndPause" destination="oAZ-uQ-14X" id="5hL-rm-6lc"/>
+                        <outlet property="trailing" destination="i76-vV-vl9" id="gxP-MO-eBI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="405.79710144927537" y="1.3392857142857142"/>
-        </scene>
-        <!--Menu Controller-->
-        <scene sceneID="6Wr-bV-ozN">
-            <objects>
-                <viewController id="Ce9-CE-gEs" customClass="MenuController" customModule="helloWorld" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="KRj-dj-cUa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zW3-zP-6KQ">
-                                <rect key="frame" x="33" y="157" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Download"/>
-                                <connections>
-                                    <segue destination="Mfh-R7-cjA" kind="show" id="62m-pt-FAJ"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="ozo-Sx-SXN"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="d4Z-dh-uV0"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zPA-b0-ze2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1110.144927536232" y="-565.17857142857144"/>
         </scene>
         <!--Download Controller-->
         <scene sceneID="20a-v9-9bh">

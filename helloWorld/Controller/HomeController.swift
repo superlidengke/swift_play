@@ -11,6 +11,26 @@ import AVFoundation
 
 class HomeController: UIViewController {
     
+    @IBOutlet weak var trailing: NSLayoutConstraint!
+    
+    @IBOutlet weak var leading: NSLayoutConstraint!
+    var menuOut = false
+    
+    @IBAction func menuTapped(_ sender: Any) {
+        if menuOut == false {
+                   trailing.constant = -150
+                   leading.constant = 150
+                   menuOut = true
+               }else{
+                   trailing.constant = 0
+                   leading.constant = 0
+                   menuOut = false
+               }
+               UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+                   self.view.layoutIfNeeded()
+               }, completion: nil)
+    }
+    
     @IBOutlet weak var playAndPause: UIButton!
     
     var audioPlayer: AVAudioPlayer?

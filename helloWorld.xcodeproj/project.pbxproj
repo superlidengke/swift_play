@@ -16,7 +16,6 @@
 		7AB1B1802488E81F002F4D58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1B17E2488E81F002F4D58 /* LaunchScreen.storyboard */; };
 		7AB1B18B2488E81F002F4D58 /* helloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B18A2488E81F002F4D58 /* helloWorldTests.swift */; };
 		7AB1B1962488E81F002F4D58 /* helloWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1952488E81F002F4D58 /* helloWorldUITests.swift */; };
-		7ABA15BE249F344500C0E773 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA15BD249F344500C0E773 /* MenuController.swift */; };
 		7ABA164E249F759F00C0E773 /* DownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA164D249F759F00C0E773 /* DownloadController.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +52,6 @@
 		7AB1B1912488E81F002F4D58 /* helloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB1B1952488E81F002F4D58 /* helloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloWorldUITests.swift; sourceTree = "<group>"; };
 		7AB1B1972488E81F002F4D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7ABA15BD249F344500C0E773 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		7ABA164D249F759F00C0E773 /* DownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -142,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				7AB1B1742488E815002F4D58 /* HomeController.swift */,
-				7ABA15BD249F344500C0E773 /* MenuController.swift */,
 				7ABA164D249F759F00C0E773 /* DownloadController.swift */,
 			);
 			path = Controller;
@@ -304,7 +301,6 @@
 				7AB1B1712488E815002F4D58 /* AppDelegate.swift in Sources */,
 				7AB1B1732488E815002F4D58 /* SceneDelegate.swift in Sources */,
 				7AB1B17B2488E816002F4D58 /* helloWorld.xcdatamodeld in Sources */,
-				7ABA15BE249F344500C0E773 /* MenuController.swift in Sources */,
 				7ABA164E249F759F00C0E773 /* DownloadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
