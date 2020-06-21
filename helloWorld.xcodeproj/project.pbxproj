@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		7AB1B1712488E815002F4D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1702488E815002F4D58 /* AppDelegate.swift */; };
 		7AB1B1732488E815002F4D58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1722488E815002F4D58 /* SceneDelegate.swift */; };
-		7AB1B1752488E815002F4D58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1742488E815002F4D58 /* ViewController.swift */; };
+		7AB1B1752488E815002F4D58 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1742488E815002F4D58 /* HomeController.swift */; };
 		7AB1B1782488E816002F4D58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1B1762488E816002F4D58 /* Main.storyboard */; };
 		7AB1B17B2488E816002F4D58 /* helloWorld.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1792488E816002F4D58 /* helloWorld.xcdatamodeld */; };
 		7AB1B17D2488E81F002F4D58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1B17C2488E81F002F4D58 /* Assets.xcassets */; };
 		7AB1B1802488E81F002F4D58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AB1B17E2488E81F002F4D58 /* LaunchScreen.storyboard */; };
 		7AB1B18B2488E81F002F4D58 /* helloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B18A2488E81F002F4D58 /* helloWorldTests.swift */; };
 		7AB1B1962488E81F002F4D58 /* helloWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1952488E81F002F4D58 /* helloWorldUITests.swift */; };
+		7ABA15BE249F344500C0E773 /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA15BD249F344500C0E773 /* MenuController.swift */; };
+		7ABA164E249F759F00C0E773 /* DownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA164D249F759F00C0E773 /* DownloadController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +41,7 @@
 		7AB1B16D2488E815002F4D58 /* helloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB1B1702488E815002F4D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB1B1722488E815002F4D58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7AB1B1742488E815002F4D58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7AB1B1742488E815002F4D58 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		7AB1B1772488E816002F4D58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7AB1B17A2488E816002F4D58 /* helloWorld.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = helloWorld.xcdatamodel; sourceTree = "<group>"; };
 		7AB1B17C2488E81F002F4D58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +53,8 @@
 		7AB1B1912488E81F002F4D58 /* helloWorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = helloWorldUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB1B1952488E81F002F4D58 /* helloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloWorldUITests.swift; sourceTree = "<group>"; };
 		7AB1B1972488E81F002F4D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ABA15BD249F344500C0E773 /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
+		7ABA164D249F759F00C0E773 /* DownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,9 +105,12 @@
 		7AB1B16F2488E815002F4D58 /* helloWorld */ = {
 			isa = PBXGroup;
 			children = (
+				7ABA15BA249F331F00C0E773 /* Utils */,
+				7ABA15B9249F331C00C0E773 /* Model */,
+				7ABA15B8249F331900C0E773 /* View */,
+				7ABA15B7249F331400C0E773 /* Controller */,
 				7AB1B1702488E815002F4D58 /* AppDelegate.swift */,
 				7AB1B1722488E815002F4D58 /* SceneDelegate.swift */,
-				7AB1B1742488E815002F4D58 /* ViewController.swift */,
 				7AB1B1762488E816002F4D58 /* Main.storyboard */,
 				7AB1B17C2488E81F002F4D58 /* Assets.xcassets */,
 				7AB1B17E2488E81F002F4D58 /* LaunchScreen.storyboard */,
@@ -129,6 +136,37 @@
 				7AB1B1972488E81F002F4D58 /* Info.plist */,
 			);
 			path = helloWorldUITests;
+			sourceTree = "<group>";
+		};
+		7ABA15B7249F331400C0E773 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7AB1B1742488E815002F4D58 /* HomeController.swift */,
+				7ABA15BD249F344500C0E773 /* MenuController.swift */,
+				7ABA164D249F759F00C0E773 /* DownloadController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7ABA15B8249F331900C0E773 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7ABA15B9249F331C00C0E773 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7ABA15BA249F331F00C0E773 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,10 +300,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7AB1B1752488E815002F4D58 /* ViewController.swift in Sources */,
+				7AB1B1752488E815002F4D58 /* HomeController.swift in Sources */,
 				7AB1B1712488E815002F4D58 /* AppDelegate.swift in Sources */,
 				7AB1B1732488E815002F4D58 /* SceneDelegate.swift in Sources */,
 				7AB1B17B2488E816002F4D58 /* helloWorld.xcdatamodeld in Sources */,
+				7ABA15BE249F344500C0E773 /* MenuController.swift in Sources */,
+				7ABA164E249F759F00C0E773 /* DownloadController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
