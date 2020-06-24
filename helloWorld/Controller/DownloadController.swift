@@ -10,39 +10,19 @@ import UIKit
 
 class DownloadController: UIViewController,UITextFieldDelegate{
     
-      
+    
     @IBOutlet weak var tipLabel: UILabel!
     
     @IBOutlet weak var urlField: UITextField!
     
+    @IBOutlet weak var downloadProgressBar: UIProgressView!
+    
+    
     @IBAction func download(_ sender: Any) {
         tipLabel.text = "Download begins"
         let url = URL(string: urlField.text!)!
-        
-        let task = URLSession.shared.downloadTask(with: url) { localURL, urlResponse, error in
-            if let localURL = localURL {
-                
-                print(localURL)
-                
-                print(self.getDocumentsDirectory())
-                let fileManager = FileManager.default
-                
-                // Copy 'hello.swift' to 'subfolder/hello.swift'
-                let newsURL = self.getDocumentsDirectory().appendingPathComponent("news.mp3")
-                do {
-                    try? FileManager.default.removeItem(at: newsURL)
-                    try _ = fileManager.copyItem(at:localURL, to: newsURL)
-                    
-                }
-                catch let error as NSError {
-                    print("Ooops! Something went wrong: \(error)")
-                }
-                self.tipLabel.text = "Download completed!"
-            }
-        }
-        
-        
-        task.resume()
+        let mURLSession = URLSession.init(configuration: .default, delegate: self, delegateQueue: nil)
+        mURLSession.downloadTask(with: URL.init(string: url.absoluteString)!).resume()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +30,8 @@ class DownloadController: UIViewController,UITextFieldDelegate{
         
         urlField.delegate = self
         urlField.returnKeyType = .done
+        
+        downloadProgressBar.setProgress(0, animated: false)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -61,3 +43,32 @@ class DownloadController: UIViewController,UITextFieldDelegate{
         return paths[0]
     }
 }
+
+
+extension DownloadController:URLSessionDownloadDelegate {
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        let fileManager = FileManager.default
+        let newsURL = self.getDocumentsDirectory().appendingPathComponent("news.mp3")
+        do {
+            try? FileManager.default.removeItem(at: newsURL)
+            try _ = fileManager.copyItem(at:location, to: newsURL)
+
+        }
+        catch let error as NSError {
+            print("Ooops! Something went wrong: \(error)")
+        }
+        self.tipLabel.text = "Download completed!"
+
+    }
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didWriteData bytesWritten: Int64, totalBytesWritten: Int64, totalBytesExpectedToWrite: Int64) {
+        
+        DispatchQueue.main.async {
+            let currentProgress = Float(totalBytesWritten) / Float(totalBytesExpectedToWrite)
+            self.downloadProgressBar.setProgress( currentProgress,animated: false)
+        }
+        
+    }
+    
+}
+
