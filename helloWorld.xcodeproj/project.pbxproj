@@ -17,6 +17,9 @@
 		7AB1B18B2488E81F002F4D58 /* helloWorldTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B18A2488E81F002F4D58 /* helloWorldTests.swift */; };
 		7AB1B1962488E81F002F4D58 /* helloWorldUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1952488E81F002F4D58 /* helloWorldUITests.swift */; };
 		7ABA164E249F759F00C0E773 /* DownloadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA164D249F759F00C0E773 /* DownloadController.swift */; };
+		7ABA165024AA084600C0E773 /* ResourcesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA164F24AA084500C0E773 /* ResourcesController.swift */; };
+		7ABA165224AA16B300C0E773 /* AudioResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA165124AA16B300C0E773 /* AudioResource.swift */; };
+		7ABA165524AA1C6800C0E773 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ABA165324AA18B800C0E773 /* AudioManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +56,9 @@
 		7AB1B1952488E81F002F4D58 /* helloWorldUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helloWorldUITests.swift; sourceTree = "<group>"; };
 		7AB1B1972488E81F002F4D58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7ABA164D249F759F00C0E773 /* DownloadController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadController.swift; sourceTree = "<group>"; };
+		7ABA164F24AA084500C0E773 /* ResourcesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesController.swift; sourceTree = "<group>"; };
+		7ABA165124AA16B300C0E773 /* AudioResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioResource.swift; sourceTree = "<group>"; };
+		7ABA165324AA18B800C0E773 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +147,7 @@
 			children = (
 				7AB1B1742488E815002F4D58 /* HomeController.swift */,
 				7ABA164D249F759F00C0E773 /* DownloadController.swift */,
+				7ABA164F24AA084500C0E773 /* ResourcesController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -155,6 +162,7 @@
 		7ABA15B9249F331C00C0E773 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7ABA165124AA16B300C0E773 /* AudioResource.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,6 +170,7 @@
 		7ABA15BA249F331F00C0E773 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				7ABA165324AA18B800C0E773 /* AudioManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -299,7 +308,10 @@
 			files = (
 				7AB1B1752488E815002F4D58 /* HomeController.swift in Sources */,
 				7AB1B1712488E815002F4D58 /* AppDelegate.swift in Sources */,
+				7ABA165524AA1C6800C0E773 /* AudioManager.swift in Sources */,
 				7AB1B1732488E815002F4D58 /* SceneDelegate.swift in Sources */,
+				7ABA165024AA084600C0E773 /* ResourcesController.swift in Sources */,
+				7ABA165224AA16B300C0E773 /* AudioResource.swift in Sources */,
 				7AB1B17B2488E816002F4D58 /* helloWorld.xcdatamodeld in Sources */,
 				7ABA164E249F759F00C0E773 /* DownloadController.swift in Sources */,
 			);
