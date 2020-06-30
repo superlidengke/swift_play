@@ -24,8 +24,16 @@
                                     <segue destination="Mfh-R7-cjA" kind="show" id="HNg-D8-O0w"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KSA-a2-8Lg">
+                                <rect key="frame" x="27" y="233" width="87" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Wifi Transfer"/>
+                                <connections>
+                                    <segue destination="tEJ-6H-nIW" kind="show" id="7Kd-L8-xOU"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yJp-dt-kEn">
-                                <rect key="frame" x="9" y="201" width="87" height="50"/>
+                                <rect key="frame" x="9" y="310" width="87" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Resources"/>
                                 <connections>
@@ -117,6 +125,34 @@
             </objects>
             <point key="canvasLocation" x="406" y="734"/>
         </scene>
+        <!--Upload Controller-->
+        <scene sceneID="S62-Yf-KNc">
+            <objects>
+                <viewController id="tEJ-6H-nIW" customClass="UploadController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1Kt-Zv-ysZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Can not start server" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTp-Ko-UTv">
+                                <rect key="frame" x="38" y="240" width="338" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="tXb-y2-Jwg"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wSQ-fC-UiS"/>
+                    <connections>
+                        <outlet property="tipLabel" destination="ZTp-Ko-UTv" id="zMY-Jd-wgb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IUQ-2U-yxy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1134.7826086956522" y="683.70535714285711"/>
+        </scene>
         <!--Download Controller-->
         <scene sceneID="20a-v9-9bh">
             <objects>
@@ -163,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJs-jA-ASz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131.8840579710145" y="79.6875"/>
+            <point key="canvasLocation" x="1135" y="1"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y2u-K3-gro">
