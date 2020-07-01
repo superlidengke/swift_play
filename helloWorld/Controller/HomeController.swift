@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class HomeController: UIViewController {
+class HomeController: UIViewController,AVAudioPlayerDelegate {
     
     @IBOutlet weak var trailing: NSLayoutConstraint!
     
@@ -36,11 +36,13 @@ class HomeController: UIViewController {
     @IBOutlet weak var playAndPause: UIButton!
     
     var audioPlayer: AVAudioPlayer?
+    var audioItemNum = 0
     
     func preparePlay(url: URL){
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: url)
-            audioPlayer?.numberOfLoops = -1
+            audioPlayer?.delegate = self
+//            audioPlayer?.numberOfLoops = -1
             let audioSession = AVAudioSession.sharedInstance();
             do {
                 try audioSession.setCategory(AVAudioSession.Category.playback)
@@ -50,6 +52,14 @@ class HomeController: UIViewController {
         } catch {
             // couldn't load file :(
         }
+    }
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+        audioItemNum=audioItemNum + 1
+        let url = self.resourceManager.getResources()[audioItemNum]
+        print(url.absoluteURL)
+        preparePlay(url:url)
+        audioPlayer?.play()
     }
     
     @IBAction func play(_ sender: UIButton) {
