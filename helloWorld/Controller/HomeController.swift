@@ -16,6 +16,8 @@ class HomeController: UIViewController {
     @IBOutlet weak var leading: NSLayoutConstraint!
     var menuOut = false
     
+    var resourceManager : ResourcesManager = ResourcesManager()
+    
     @IBAction func menuTapped(_ sender: Any) {
         if menuOut == false {
                    trailing.constant = -150
@@ -58,7 +60,7 @@ class HomeController: UIViewController {
             sender.setTitle("Pause", for: .normal)
             
             if(audioPlayer == nil){
-                let url = self.getDocumentsDirectory().appendingPathComponent("news.mp3")
+                let url = self.resourceManager.getResources()[0]
                 print(url.absoluteURL)
                 preparePlay(url:url)
             }

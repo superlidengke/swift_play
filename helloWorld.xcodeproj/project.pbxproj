@@ -27,6 +27,7 @@
 		7A485DD224AB1A9200E884D2 /* UploadController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A485DD124AB1A9200E884D2 /* UploadController.m */; };
 		7A485DD324AB1C4300E884D2 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A485DCE24AB1A3300E884D2 /* libz.tbd */; };
 		7A485DD424AB1C4C00E884D2 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A485DCF24AB1A3C00E884D2 /* libxml2.tbd */; };
+		7A485DD624AC182100E884D2 /* ResourcesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A485DD524AC182100E884D2 /* ResourcesManager.swift */; };
 		7AB1B1712488E815002F4D58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1702488E815002F4D58 /* AppDelegate.swift */; };
 		7AB1B1732488E815002F4D58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1722488E815002F4D58 /* SceneDelegate.swift */; };
 		7AB1B1752488E815002F4D58 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB1B1742488E815002F4D58 /* HomeController.swift */; };
@@ -100,6 +101,7 @@
 		7A485DCF24AB1A3C00E884D2 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		7A485DD024AB1A9200E884D2 /* UploadController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadController.h; sourceTree = "<group>"; };
 		7A485DD124AB1A9200E884D2 /* UploadController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadController.m; sourceTree = "<group>"; };
+		7A485DD524AC182100E884D2 /* ResourcesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcesManager.swift; sourceTree = "<group>"; };
 		7AB1B16D2488E815002F4D58 /* helloWorld.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = helloWorld.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AB1B1702488E815002F4D58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AB1B1722488E815002F4D58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				7ABA165324AA18B800C0E773 /* AudioManager.swift */,
+				7A485DD524AC182100E884D2 /* ResourcesManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -467,6 +470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A485DC624AB1A0800E884D2 /* GCDWebServerURLEncodedFormRequest.m in Sources */,
+				7A485DD624AC182100E884D2 /* ResourcesManager.swift in Sources */,
 				7AB1B1752488E815002F4D58 /* HomeController.swift in Sources */,
 				7A485D9524AB19F700E884D2 /* SJXCSMIPHelper.m in Sources */,
 				7A485DBF24AB1A0800E884D2 /* GCDWebServerFunctions.m in Sources */,
