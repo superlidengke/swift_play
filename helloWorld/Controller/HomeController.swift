@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class HomeController: UIViewController,AVAudioPlayerDelegate {
+class HomeController: UIViewController,AVAudioPlayerDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var trailing: NSLayoutConstraint!
     
@@ -55,26 +55,35 @@ class HomeController: UIViewController,AVAudioPlayerDelegate {
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        audioItemNum=audioItemNum + 1
+        audioItemNum=(audioItemNum + 1) % self.resourceManager.getResources().count
         let url = self.resourceManager.getResources()[audioItemNum]
         print(url.absoluteURL)
         preparePlay(url:url)
         audioPlayer?.play()
     }
     
+    func pauseAudio(){
+        audioPlayer?.pause()
+        playAndPause.setTitle("Play", for: .normal)
+        disableSchedule()
+    }
+    
+    func playAudio(){
+        playAndPause.setTitle("Pause", for: .normal)
+        audioPlayer?.play()
+        enableSchedule()
+    }
+    
     @IBAction func play(_ sender: UIButton) {
         if(audioPlayer?.isPlaying ?? false){
-            audioPlayer?.pause()
-            sender.setTitle("Play", for: .normal)
+            pauseAudio()
         }else{
-            sender.setTitle("Pause", for: .normal)
-            
             if(audioPlayer == nil){
                 let url = self.resourceManager.getResources()[0]
                 print(url.absoluteURL)
                 preparePlay(url:url)
             }
-            audioPlayer?.play()
+            playAudio()
         }
     }
     
@@ -88,8 +97,84 @@ class HomeController: UIViewController,AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        stoptimeField.delegate = self
+        stoptimeField.returnKeyType = .done
+        stoptimeField.keyboardType = .numberPad
+        stoptimeField.addDoneButtonOnKeyBoardWithControl()
     }
     
     
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        stoptimeField.resignFirstResponder()
+    }
+    
+    func enableSchedule(){
+        stoptimeField.isUserInteractionEnabled = true
+        stoptimeField.backgroundColor = UIColor.white
+        stopTimeSwitch.isEnabled = true
+        stopTimeSwitch.alpha = 1.0
+    }
+    
+    func disableSchedule(){
+        stoptimeField.isUserInteractionEnabled = false
+        stoptimeField.backgroundColor = UIColor.lightGray
+        stopTimeSwitch.isEnabled = false
+        stopTimeSwitch.alpha = 0.5
+        stopTimeSwitch.isOn = false
+        playStatus.text = "Schedule Inactive"
+        
+    }
+    
+    // play schedule
+    
+    @IBOutlet weak var playStatus: UILabel!
+    
+    
+    @IBOutlet weak var stoptimeField: UITextField!
+    
+    var playTimer: Timer?
+    
+    @IBOutlet weak var stopTimeSwitch: UISwitch!
+    @IBAction func scheduleSwitch(_ sender: UISwitch) {
+        let switchOn = sender.isOn;
+        if(switchOn){
+            startCountDown()
+        }else{
+            playTimer?.invalidate()
+            playStatus.text = "Schedule Inactive"
+        }
+    }
+    
+     func startCountDown() {
+        let mins = Double(stoptimeField.text ?? "10") ?? 10
+        self.playStatus.text = "will stop after" + (stoptimeField.text ?? "10")
+        let startDate = Date()
+        let calendar = Calendar.current
+        let date = calendar.date(byAdding: .minute, value: Int(mins), to: startDate)!
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let second = calendar.component(.second, from: date)
+        
+        playStatus.text = "Stop at \(hour) : \(minute): \(second)"
+            
+        
+        playTimer = Timer.scheduledTimer(withTimeInterval: mins*60.0, repeats: false) { timer in
+            print("Timer fired!")
+            self.pauseAudio()
+        }
+    }
+}
+
+extension UITextField {
+    func addDoneButtonOnKeyBoardWithControl() {
+        let keyboardToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 44))
+    keyboardToolbar.sizeToFit()
+    keyboardToolbar.barStyle = .default
+    let flexBarButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+    let doneBarButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.endEditing(_:)))
+    keyboardToolbar.items = [flexBarButton, doneBarButton]
+    self.inputAccessoryView = keyboardToolbar
+    }
 }
 
