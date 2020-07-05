@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 public class AudioManager {
     private lazy var audios : [AudioResource] = self.loadAudios()
@@ -25,7 +26,10 @@ public class AudioManager {
                 let fileAttributes = try FileManager.default.attributesOfItem(atPath: fileURL.path)
                 let fileSize = fileAttributes[FileAttributeKey.size] as? NSNumber
                 let fileSizeM = (fileSize?.doubleValue ?? 0.0)/1024.0/1024.0
-                let audioResource = AudioResource(name: fileURL.lastPathComponent, duration: "", size: String(format:"%.1f M" ,fileSizeM))
+                let duration : Double = try AVAudioPlayer(contentsOf: fileURL).duration
+                let mins = Int(duration / 60)
+                let seconds = Int(duration) - mins * 60
+                let audioResource = AudioResource(name: fileURL.lastPathComponent, duration: "\(mins):\(seconds)", size: String(format:"%.1f M" ,fileSizeM))
                 audiosFiles.append(audioResource)
             }
             
